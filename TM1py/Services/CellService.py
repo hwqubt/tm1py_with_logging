@@ -2976,7 +2976,7 @@ class CellService(ObjectService):
             'MDX': mdx
         }
         response = self._rest.POST(url=url, data=json.dumps(data, ensure_ascii=False), **kwargs)
-        if response.json() is None:
+        if response.text == 'None':
             print('TM1py create_cellset line 2979:', response.text)
             print(data)
             print(url)
